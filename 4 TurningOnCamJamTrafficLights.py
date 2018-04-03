@@ -15,7 +15,7 @@ from gpiozero import Button
 # Set pins 18, 23 and 24 to be LEDs
 red = LED(18)
 yellow = LED(23)
-#green = LED(24)
+green = LED(24)
 Switch = Button(3)
 
 mc = minecraft.Minecraft.create()
@@ -42,9 +42,10 @@ def Light_Sequence():
     mc.postToChat("Green off")
     green.off()
     time.sleep(1)
-    mc.postToChat(("LEDs off")
+    mc.postToChat("LEDs off")
 
-evs = mc.events.pollBlockHits()
+while True:
+    evs = mc.events.pollBlockHits()
     for e in evs:
         pos = e.pos
 
